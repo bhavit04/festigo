@@ -1,0 +1,234 @@
+.messages-container {
+  display: flex;
+  height: calc(100vh - 120px);
+  background: linear-gradient(to right, #ffffff, #fafafa);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.conversations-list {
+  width: 320px;
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+  overflow-y: auto;
+  padding: 20px;
+  background: white;
+}
+
+.conversation-item {
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+}
+
+.conversation-item:hover {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  transform: translateX(4px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.conversation-item.selected {
+  background: linear-gradient(135deg, #e0e7ff, #dbeafe);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.conversation-item.unread {
+  font-weight: 600;
+  position: relative;
+}
+
+.conversation-item.unread::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #646cff;
+  border-radius: 50%;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.timestamp {
+  font-size: 0.85em;
+  color: #64748b;
+}
+
+.last-message {
+  color: #64748b;
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.message-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.message-header {
+  padding: 24px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  background: linear-gradient(135deg, #f8fafc, #f6f9fc);
+}
+
+.message-input {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  background: white;
+  gap: 12px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.message-input input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.message-input button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #646cff, #7c83ff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
+}
+
+.message-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(100, 108, 255, 0.3);
+}
+
+.message {
+  margin: 16px 0;
+  max-width: 70%;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.message:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.message.sent {
+  background: linear-gradient(135deg, #646cff, #7c83ff);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message.received {
+  background: white;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+.message.system {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  margin: 16px auto;
+  text-align: center;
+  font-style: italic;
+  color: #64748b;
+  max-width: 90%;
+  border-radius: 12px;
+}
+
+.message-content {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.message-time {
+  font-size: 0.8em;
+  opacity: 0.8;
+  text-align: right;
+}
+
+.message.sent .message-time {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.message.received .message-time {
+  color: #64748b;
+}
+
+.event-card-message {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  padding: 20px;
+  margin: 16px auto;
+  border-radius: 16px;
+  max-width: 90%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.event-card-message h4 {
+  margin: 0 0 12px 0;
+  color: #047857;
+  font-size: 1.1rem;
+}
+
+.event-card-message p {
+  margin: 8px 0;
+  color: #065f46;
+  line-height: 1.6;
+}
+
+.no-conversation-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #64748b;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.loading, .no-conversations {
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 1.1rem;
+} 

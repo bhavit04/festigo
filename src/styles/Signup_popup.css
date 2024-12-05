@@ -1,0 +1,135 @@
+.signup-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.signup-popup-content {
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(100, 108, 255, 0.1);
+    text-align: center;
+    max-width: 440px;
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.4s ease;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.signup-popup-message {
+    font-size: 1.5rem;
+    color: #1a237e;
+    margin-bottom: 25px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.signup-popup-close {
+    background: linear-gradient(135deg, #646cff, #535bf2);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signup-popup-close:hover {
+    background: linear-gradient(135deg, #535bf2, #4a4fcf);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(100, 108, 255, 0.3);
+}
+
+.signup-popup-close:active {
+    transform: translateY(0);
+}
+
+.signup-popup-login {
+    margin: 25px 0 5px;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.signup-popup-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(100, 108, 255, 0.2), transparent);
+}
+
+.signup-popup-login-link {
+    color: #646cff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.signup-popup-login-link:hover {
+    color: #4a4fcf;
+    background: rgba(100, 108, 255, 0.08);
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .signup-popup-content {
+        padding: 30px 20px;
+        width: 85%;
+    }
+
+    .signup-popup-message {
+        font-size: 1.25rem;
+    }
+
+    .signup-popup-close {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
